@@ -2,12 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="zwb.cn.social" >
 
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
+        android:name="zwb.cn.exception.CrashApplication"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
@@ -22,6 +24,10 @@
         <activity
             android:name="zwb.cn.demo.Demo"
             android:label="@string/title_activity_demo" >
+        </activity>
+        <activity
+            android:name="zwb.cn.demo.PullToRefreshActivity"
+            android:label="@string/title_activity_pull_to_refresh" >
         </activity>
     </application>
 

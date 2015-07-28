@@ -8,13 +8,30 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.Nullable;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
+import com.marshalchen.ultimaterecyclerview.UltimateRecyclerviewViewHolder;
+import com.marshalchen.ultimaterecyclerview.UltimateViewAdapter;
+import com.marshalchen.ultimaterecyclerview.uiUtils.ScrollSmoothLineaerLayoutManager;
+
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Logger;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -22,6 +39,7 @@ import butterknife.OnClick;
 import zwb.cn.social.R;
 import zwb.cn.util.DownloadManagerPro;
 import zwb.cn.util.TimeUtils;
+import zwb.cn.util.ToastUtils;
 
 public class Demo extends ActionBarActivity {
 
@@ -32,6 +50,7 @@ public class Demo extends ActionBarActivity {
     DownloadManager downloadManager;
     private long  id;
     private DownloadManagerPro downloadManagerPro;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +67,22 @@ public class Demo extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_demo, menu);
         return true;
+    }
+
+    public static List<String> newList() {
+        final List<String> stringList = new ArrayList<>();
+        for (int i=0;i<10;i++){
+            stringList.add("111");
+            stringList.add("TYAT");
+            stringList.add("BMW");
+            stringList.add("3M");
+            stringList.add("Apple");
+            stringList.add("Organe");
+            stringList.add("Nike");
+            stringList.add("Addos");
+            stringList.add("76 RE");
+        }
+        return stringList;
     }
 
     @Override
@@ -85,7 +120,6 @@ public class Demo extends ActionBarActivity {
         File file = Environment.getExternalStoragePublicDirectory(path);
         return (file.exists() && file.isDirectory()) ? true : file.mkdirs();
     }
-
     class DownloadChangeObserver extends ContentObserver {
 
         public DownloadChangeObserver(){
@@ -112,7 +146,6 @@ public class Demo extends ActionBarActivity {
     private Handler handler=new Handler(){
         @Override
         public void handleMessage(Message msg) {
-            tv_load.setText("当前进度是："+msg.arg1);
             super.handleMessage(msg);
         }
     };
@@ -130,4 +163,7 @@ public class Demo extends ActionBarActivity {
         super.onPause();
         getContentResolver().unregisterContentObserver(downloadObserver);
     }
+
+
+
 }

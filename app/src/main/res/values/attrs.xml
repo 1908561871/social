@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MatchView">
+        <attr name="matchViewText" format="string" />
+        <attr name="matchViewTextColor" format="color" />
+        <attr name="matchViewTextSize" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="PullScrollView">
+        <attr name="psv_header" format="reference"/>
+        <attr name="psv_headerHeight" format="dimension"/>
+        <attr name="psv_headerVisibleHeight" format="dimension"/>
+    </declare-styleable>
+</resources>
