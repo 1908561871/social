@@ -1,30 +1,15 @@
 package zwb.cn.mvp.view;
 
-import android.content.Intent;
-import android.content.SyncStatusObserver;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.widget.Button;
-
-import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.HttpUrl;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
-
-import java.io.IOException;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import zwb.cn.demo.PullToRefreshActivity;
-import zwb.cn.net.HttpRequestBody;
-import zwb.cn.net.HttpRequestUrl;
-import zwb.cn.net.HttpUtil;
 import zwb.cn.social.R;
-import zwb.cn.util.ToastUtils;
+import zwb.cn.view.ProgressLayout;
 import zwb.cn.view.matchview.MatchTextView;
 
 
@@ -35,13 +20,21 @@ public class SplashActivity extends ActionBarActivity {
     @Bind(R.id.mMatchTextView)
     MatchTextView mMatchTextView;
 
-
+    @Bind((R.id.progress))
+    ProgressLayout progressLayout;
+    private Handler mHandler=new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         ButterKnife.bind(this);
-
+        progressLayout.setProgress(true);
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                progressLayout.setProgress(false);
+            }
+        }, 3000);
     }
 
     @OnClick(R.id.bt_action)
@@ -49,13 +42,8 @@ public class SplashActivity extends ActionBarActivity {
 
         /*Intent intent=new Intent(this,PullToRefreshActivity.class);
         startActivity(intent);*/
-        String str=null;
-        if (str.equals("")){
-
-        }
 
     }
-
 
 
 

@@ -11,4 +11,8 @@
         <attr name="psv_headerHeight" format="dimension"/>
         <attr name="psv_headerVisibleHeight" format="dimension"/>
     </declare-styleable>
+    <declare-styleable name="ProgressLayout">
+        <attr name="progressLayoutProgressBackground" format="color"/>
+        <attr name="progressLayoutProgress" format="boolean"/>
+    </declare-styleable>
 </resources>

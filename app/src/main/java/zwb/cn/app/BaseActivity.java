@@ -3,14 +3,13 @@
  */
 package zwb.cn.app;
 
-import java.lang.ref.WeakReference;
-
-import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.ComponentCallbacks2;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+
+import java.lang.ref.WeakReference;
+
 import zwb.cn.exception.CrashApplication;
 import zwb.cn.util.ToastUtils;
 
@@ -53,7 +52,7 @@ public class BaseActivity extends Activity{
 	}
 	
 	/**
-	 * 返回当前运行activity的名�?
+	 * 杩斿洖褰撳墠杩愯activity鐨勫悕绉?
 	 * @return
 	 */
 	protected String getCurrentActivityName() {
@@ -86,7 +85,7 @@ public class BaseActivity extends Activity{
 	}
 	
 	/**
-	 * 防止内部Handler类引起内存泄�?
+	 * 闃叉鍐呴儴Handler绫诲紩璧峰唴瀛樻硠闇?
 	 * @author Tony Shen
 	 *
 	 */

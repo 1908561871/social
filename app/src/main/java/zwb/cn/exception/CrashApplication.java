@@ -39,7 +39,16 @@ public class CrashApplication extends Application {
 	    init();
 	}
 
+    /**
+     * 单例，返回一个实例
+     * @return
+     */
+    public static CrashApplication getInstance() {
+        if (instance == null) {
 
+        }
+        return instance;
+    }
 	public void init(){
 		CrashHandler crashHandler = CrashHandler.getInstance();
 		crashHandler.init(getApplicationContext());
@@ -81,8 +90,5 @@ public class CrashApplication extends Application {
 		return imei;
 	}
 
-	public static CrashApplication getInstance() {
-		return instance;
-	}
 
 }
