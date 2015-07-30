@@ -2,16 +2,7 @@ package zwb.cn.util;
 
 import android.content.Context;
 
-/**
- * ScreenUtils
- * <ul>
- * <strong>Convert between dp and sp</strong>
- * <li>{@link zwb.cn.util.ScreenUtils#dpToPx(android.content.Context, float)}</li>
- * <li>{@link zwb.cn.util.ScreenUtils#pxToDp(android.content.Context, float)}</li>
- * </ul>
- * 
- * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2014-2-14
- */
+
 public class ScreenUtils {
 
     private ScreenUtils() {

@@ -2,11 +2,7 @@ package zwb.cn.util;
 
 import java.security.MessageDigest;
 
-/**
- * DigestUtils
- * 
- * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2014-03-20
- */
+
 public class DigestUtils {
 
     /**

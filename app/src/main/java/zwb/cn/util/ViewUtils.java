@@ -1,9 +1,5 @@
 package zwb.cn.util;
 
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.List;
-
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -16,30 +12,9 @@ import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 
-/**
- * ViewUtils
- * <ul>
- * <strong>get view height</strong>
- * <li>{@link zwb.cn.util.ViewUtils#getListViewHeightBasedOnChildren(android.widget.ListView)}</li>
- * <li>{@link zwb.cn.util.ViewUtils#getAbsListViewHeightBasedOnChildren(android.widget.AbsListView)}</li>
- * </ul>
- * <ul>
- * <strong>set view height</strong>
- * <li>{@link zwb.cn.util.ViewUtils#setViewHeight(android.view.View, int)} set view height</li>
- * <li>{@link zwb.cn.util.ViewUtils#setListViewHeightBasedOnChildren(android.widget.ListView)}</li>
- * <li>{@link zwb.cn.util.ViewUtils#setAbsListViewHeightBasedOnChildren(android.widget.AbsListView)}</li>
- * </ul>
- * <ul>
- * <strong>get other info</strong>
- * <li>{@link zwb.cn.util.ViewUtils#getGridViewVerticalSpacing(android.widget.GridView)} get GridView vertical spacing</li>
- * </ul>
- * <ul>
- * <strong>set other info</strong>
- * <li>{@link zwb.cn.util.ViewUtils#setSearchViewOnClickListener(android.view.View, android.view.View.OnClickListener)}</li>
- * </ul>
- * 
- * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-12-24
- */
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
 public class ViewUtils {
 
     private ViewUtils() {

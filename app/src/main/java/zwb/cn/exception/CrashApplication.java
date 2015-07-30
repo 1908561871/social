@@ -9,6 +9,8 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.telephony.TelephonyManager;
 
+import com.avos.avoscloud.AVOSCloud;
+import com.avos.avoscloud.AVObject;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
 import java.util.ArrayList;
@@ -37,6 +39,8 @@ public class CrashApplication extends Application {
 	public void onCreate() {
 		super.onCreate();
 	    init();
+        //测试
+        test();
 	}
 
     /**
@@ -52,8 +56,11 @@ public class CrashApplication extends Application {
 	public void init(){
 		CrashHandler crashHandler = CrashHandler.getInstance();
 		crashHandler.init(getApplicationContext());
+        //fresco初始化
 		Fresco.initialize(getApplicationContext());
-		instance = this;
+        //IM初始化
+        AVOSCloud.initialize(this, Constant.IM_APPID, Constant.IM_KEY);
+        instance = this;
 		session = new HashMap<String, Object>();
 		activityManager = new ArrayList<Activity>();
 		PackageManager manager = this.getPackageManager();
@@ -71,6 +78,13 @@ public class CrashApplication extends Application {
 		}
 
 	}
+
+    public void test(){
+        AVObject testObject = new AVObject("TestObject");
+        testObject.put("foo", "bar");
+        testObject.saveInBackground();
+    }
+
 
 	/**
 	 * 获取手机的设备号（imei）

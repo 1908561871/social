@@ -1,4 +1,4 @@
-package zwb.cn.view;
+package zwb.cn.view.loadinglayout;
 
 import android.content.Context;
 import android.content.res.TypedArray;

@@ -1,12 +1,6 @@
 package zwb.cn.util;
 
-/**
- * Singleton helper class for lazily initialization.
- * 
- * @author <a href="http://www.trinea.cn/" target="_blank">Trinea</a>
- * 
- * @param <T>
- */
+
 public abstract class SingletonUtils<T> {
 
     private T instance;

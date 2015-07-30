@@ -1,10 +1,6 @@
 package zwb.cn.util;
 
-/**
- * SizeUtils
- * 
- * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2013-5-15
- */
+
 public class SizeUtils {
 
     /** gb to byte **/

@@ -14,31 +14,6 @@ import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 
-/**
- * ImageUtils
- * <ul>
- * convert between Bitmap, byte array, Drawable
- * <li>{@link #bitmapToByte(android.graphics.Bitmap)}</li>
- * <li>{@link #bitmapToDrawable(android.graphics.Bitmap)}</li>
- * <li>{@link #byteToBitmap(byte[])}</li>
- * <li>{@link #byteToDrawable(byte[])}</li>
- * <li>{@link #drawableToBitmap(android.graphics.drawable.Drawable)}</li>
- * <li>{@link #drawableToByte(android.graphics.drawable.Drawable)}</li>
- * </ul>
- * <ul>
- * get image
- * <li>{@link #getInputStreamFromUrl(String, int)}</li>
- * <li>{@link #getBitmapFromUrl(String, int)}</li>
- * <li>{@link #getDrawableFromUrl(String, int)}</li>
- * </ul>
- * <ul>
- * scale image
- * <li>{@link #scaleImageTo(android.graphics.Bitmap, int, int)}</li>
- * <li>{@link #scaleImage(android.graphics.Bitmap, float, float)}</li>
- * </ul>
- * 
- * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2012-6-27
- */
 public class ImageUtils {
 
     private ImageUtils() {
