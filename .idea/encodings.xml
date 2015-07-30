@@ -4,8 +4,6 @@
     <file url="file://$PROJECT_DIR$/app/src/main/java/zwb/cn/app/BaseActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/custom_bottom_progressbar.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/recycler_view_adapter.xml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/stick_header_item.xml" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
-

@@ -4,15 +4,23 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
+        android:name="zwb.cn.exception.CrashApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:name="zwb.cn.exception.CrashApplication"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <service android:name="com.avos.avoscloud.PushService"
+        android:exported="true" />
+        <receiver android:name="com.avos.avoscloud.AVBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+
         <activity
             android:name="zwb.cn.mvp.view.SplashActivity"
             android:label="@string/app_name" >
@@ -22,10 +30,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="zwb.cn.demo.PullToRefreshActivity"
-            android:label="@string/title_activity_pull_to_refresh" >
-        </activity>
+
+        <receiver
+            android:name="zwb.cn.im.PushReceiver"
+            android:enabled="true"
+            android:exported="true" >
+        </receiver>
     </application>
 
 </manifest>
