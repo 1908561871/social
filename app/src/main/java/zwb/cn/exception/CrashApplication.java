@@ -9,8 +9,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.telephony.TelephonyManager;
 
-import com.avos.avoscloud.AVOSCloud;
-import com.avos.avoscloud.AVObject;
+import com.easemob.chat.EMChat;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
 import java.util.ArrayList;
@@ -58,8 +57,9 @@ public class CrashApplication extends Application {
 		crashHandler.init(getApplicationContext());
         //fresco初始化
 		Fresco.initialize(getApplicationContext());
-        //IM初始化
-        AVOSCloud.initialize(this, Constant.IM_APPID, Constant.IM_KEY);
+        //初始化IM
+        EMChat.getInstance().init(this);
+        EMChat.getInstance().setDebugMode(true);//在做打包混淆时，要关闭debug模式，如果未被关闭，则会出现程序无法运行问题
         instance = this;
 		session = new HashMap<String, Object>();
 		activityManager = new ArrayList<Activity>();
@@ -80,9 +80,6 @@ public class CrashApplication extends Application {
 	}
 
     public void test(){
-        AVObject testObject = new AVObject("TestObject");
-        testObject.put("foo", "bar");
-        testObject.saveInBackground();
     }
 
 
@@ -103,6 +100,9 @@ public class CrashApplication extends Application {
 		}
 		return imei;
 	}
+
+
+
 
 
 }

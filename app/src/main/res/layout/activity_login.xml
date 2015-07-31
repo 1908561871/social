@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:match="http://schemas.android.com/apk/res-auto"
+
+    android:layout_height="match_parent">
+    <zwb.cn.view.eidttext.MaterialEditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:hint="请输入用户名"
+        match:maxCharacters="120"
+        />
+    <zwb.cn.view.eidttext.MaterialEditText
+        android:id="@+id/et_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:hint="请输入密码"
+        match:maxCharacters="120"
+        />
+    <Button
+        android:id="@+id/bt_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="登陆"/>
+</LinearLayout>

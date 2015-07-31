@@ -36,4 +36,9 @@
         <!-- Max characters count limit. 0 means no max. -->
         <attr name="maxCharacters"/>
     </declare-styleable>
+    <declare-styleable name="MarqueeView">
+        <attr name="marqueeSpeed" format="integer" />
+        <attr name="pause" format="integer" />
+        <attr name="autoStart" format="boolean" />
+    </declare-styleable>
 </resources>
