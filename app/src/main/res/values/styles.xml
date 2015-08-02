@@ -5,6 +5,16 @@
         <!-- Customize your theme here. -->
     </style>
 
-
+    <style name="radion_button_style" >
+        <item name="android:textColor">@color/light_gray</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_margin">1dip</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
 
 </resources>

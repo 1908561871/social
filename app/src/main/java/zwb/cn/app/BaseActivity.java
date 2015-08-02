@@ -4,19 +4,34 @@
 package zwb.cn.app;
 
 import android.app.Activity;
+import android.content.Context;
+import android.graphics.Color;
+import android.inputmethodservice.Keyboard;
+import android.inputmethodservice.KeyboardView;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.design.widget.Snackbar;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.lang.ref.WeakReference;
 
+import de.greenrobot.event.EventBus;
+import de.greenrobot.event.Subscribe;
+import de.greenrobot.event.ThreadMode;
+import dmax.dialog.SpotsDialog;
 import zwb.cn.event.NetChangeEvent;
-import zwb.cn.eventbus.EventBusManager;
-import zwb.cn.eventbus.Subscribe;
 import zwb.cn.exception.CrashApplication;
 import zwb.cn.social.R;
+import zwb.cn.util.NetWorkUtils;
+import zwb.cn.util.SAFUtils;
 import zwb.cn.util.ToastUtils;
 import zwb.cn.view.loadtoast.LoadToast;
 
@@ -29,14 +44,15 @@ public class BaseActivity extends Activity{
 	public static CrashApplication app;
 	public int networkType;
 	public String networkName;
-    private boolean isShowNet;
+	public static boolean isNetAvailabe;
+	private boolean isShowNet;
     protected Handler mHandler = new SafeHandler(this);
-	
+	private SpotsDialog spotsDialog;
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		app = (CrashApplication) this.getApplication();
 		addActivityToManager(this);
-        EventBusManager.getInstance().register(this);
+		EventBus.getDefault().register(this);
 	}
 	
 	protected  void addActivityToManager(Activity act) {
@@ -82,7 +98,7 @@ public class BaseActivity extends Activity{
 	protected void onDestroy() {
 		super.onDestroy();
 		delActivityFromManager(this);
-        EventBusManager.getInstance().unregister(this);
+		EventBus.getDefault().unregister(this);
     }
 	
 	protected void toast(String message) {
@@ -120,23 +136,76 @@ public class BaseActivity extends Activity{
     public void setHeadTitle(String titleName,boolean isBack,boolean isShowNet){
         TextView title= (TextView) findViewById(R.id.tv_title);
         title.setText(titleName);
+		if (isBack){
+			ImageView iv_back= (ImageView) findViewById(R.id.iv_back);
+			iv_back.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View view) {
+					finish();
+				}
+			});
+		}
         this.isShowNet=isShowNet;
+		if (isShowNet && !isNetAvailabe){
+			findViewById(R.id.rl_set_net).setVisibility(View.VISIBLE);
+			findViewById(R.id.rl_set_net).setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					//todo
+				}
+			});
+		}
     }
 
-
-  @Subscribe
+	@Subscribe
   public void netChange(NetChangeEvent event){
-      ToastUtils.show(this,"当前的网络未连接");
-     // new LoadToast(BaseActivity.this).setText("当前的网络未连接").setTranslationY(500).show();
-      if (isShowNet){
-          findViewById(R.id.rl_set_net).setVisibility(View.VISIBLE);
+		isNetAvailabe=event.isNetAvailable();
+      if (isShowNet && !isNetAvailabe){
+		  findViewById(R.id.rl_set_net).setVisibility(View.VISIBLE);
           findViewById(R.id.rl_set_net).setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View v) {
-                  new LoadToast(BaseActivity.this).setText("当前的网络未连接").setTranslationY(500).show();
+				  //todo
               }
           });
-      }
+      }else{
+		  findViewById(R.id.rl_set_net).setVisibility(View.GONE);
+	  }
   }
+
+	/**
+	 * 获取当前的网络状态
+	 */
+	public  void obtainNetStatue(){
+		isNetAvailabe= SAFUtils.checkNetworkStatus(this);
+	}
+
+
+	public void showSnakeBar(String mes){
+		SAFUtils.hideSoftInputFromWindow(this, getWindow().getDecorView());
+		SpannableString msp=new SpannableString(mes);
+		msp.setSpan(new ForegroundColorSpan(Color.WHITE), 0, mes.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);  //设置前景色为白色
+		Snackbar.make(getWindow().getDecorView(),msp,Snackbar.LENGTH_SHORT).show();
+	}
+
+
+	public  void showSpotsDialog(String mes){
+
+		if (spotsDialog==null){
+			spotsDialog=new SpotsDialog(this,mes);
+		}
+		if (!spotsDialog.isShowing())
+		{
+			spotsDialog.show();
+		}
+	}
+
+
+	public void hideSpotsDialog(){
+		spotsDialog.dismiss();
+
+	}
+
+
 
 }

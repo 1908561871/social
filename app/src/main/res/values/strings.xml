@@ -6,5 +6,12 @@
     <string name="title_activity_demo">demo</string>
     <string name="title_activity_pull_to_refresh">PullToRefreshActivity</string>
     <string name="net_disconnect">您当前的网络没有连接,请检查设置</string>
+    <string name="title_activity_main">MainActivity</string>
+    <!--主页字段设置-->
+    <string name="home">首页</string>
+    <string name="message">消息</string>
+    <string name="friends">好友</string>
+    <string name="dynamic">动态</string>
+    <string name="more">更多</string>
 
 </resources>

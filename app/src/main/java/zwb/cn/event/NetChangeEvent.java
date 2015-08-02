@@ -5,4 +5,13 @@ package zwb.cn.event;
  */
 public class NetChangeEvent {
 
+    private boolean isNetAvailable;
+
+    public NetChangeEvent(boolean isNetAvailable) {
+        this.isNetAvailable = isNetAvailable;
+    }
+
+    public boolean isNetAvailable() {
+        return isNetAvailable;
+    }
 }

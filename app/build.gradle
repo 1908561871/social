@@ -52,4 +52,5 @@ dependencies {
     compile files('libs/weibo.sdk.android.sso.3.0.1-leancloud.jar')
     compile files('libs/easemobchat_2.2.1.jar')
     compile 'com.alibaba:fastjson:1.2.6'
+    compile 'de.greenrobot:eventbus:3.0.0-beta1'
 }

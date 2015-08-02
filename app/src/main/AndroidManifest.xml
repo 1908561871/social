@@ -22,7 +22,7 @@
     <application
         android:name="zwb.cn.exception.CrashApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo_icon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <meta-data
@@ -38,11 +38,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <service android:name="com.easemob.chat.EMChatService" />
-
+        <activity android:name="zwb.cn.mvp.view.ResignActivity" />
         <activity android:name="zwb.cn.mvp.view.LoginActivity" />
-
+        <activity
+            android:name="zwb.cn.mvp.view.MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
     </application>
 
 </manifest>

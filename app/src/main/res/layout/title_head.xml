@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     xmlns:match="http://schemas.android.com/apk/res-auto"
     android:layout_height="wrap_content">
 
@@ -26,30 +28,23 @@
         android:layout_alignParentRight="true"
         android:scaleType="centerInside"
         android:src="@drawable/mine"
+        android:visibility="invisible"
         />
 
-    <zwb.cn.view.MarqueeView
-        android:id="@+id/mv_title"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_toRightOf="@id/iv_back"
-        android:layout_toLeftOf="@id/iv_more"
-        android:gravity="center"
-        >
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="轻聊"
+            android:textColor="@color/white"
             android:gravity="center"
-            android:textSize="20sp"
+            android:textSize="23sp"
             android:textStyle="bold"
             android:singleLine="true"
-            android:ellipsize="end"
           />
-        </zwb.cn.view.MarqueeView>
     </RelativeLayout>
     <RelativeLayout
+        android:visibility="gone"
         android:id="@+id/rl_set_net"
         android:layout_width="match_parent"
         android:paddingTop="5dp"
