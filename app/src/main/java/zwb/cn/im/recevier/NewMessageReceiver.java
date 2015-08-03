@@ -12,6 +12,11 @@ import com.easemob.chat.EMMessage;
  * Created by zhangweibo on 2015/8/2.
  */
 public class NewMessageReceiver extends BroadcastReceiver {
+
+
+    public NewMessageReceiver() {
+    }
+
     @Override
     public void onReceive(Context context, Intent intent) {
         abortBroadcast();

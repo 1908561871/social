@@ -4,12 +4,7 @@
 package zwb.cn.app;
 
 import android.app.Activity;
-import android.content.Context;
 import android.graphics.Color;
-import android.inputmethodservice.Keyboard;
-import android.inputmethodservice.KeyboardView;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -25,15 +20,12 @@ import java.lang.ref.WeakReference;
 
 import de.greenrobot.event.EventBus;
 import de.greenrobot.event.Subscribe;
-import de.greenrobot.event.ThreadMode;
 import dmax.dialog.SpotsDialog;
-import zwb.cn.event.NetChangeEvent;
+import zwb.cn.mvp.view.event.NetChangeEvent;
 import zwb.cn.exception.CrashApplication;
 import zwb.cn.social.R;
-import zwb.cn.util.NetWorkUtils;
 import zwb.cn.util.SAFUtils;
 import zwb.cn.util.ToastUtils;
-import zwb.cn.view.loadtoast.LoadToast;
 
 /**
  * @author Tony Shen

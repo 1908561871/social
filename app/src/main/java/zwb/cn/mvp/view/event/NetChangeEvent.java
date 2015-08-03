@@ -1,4 +1,4 @@
-package zwb.cn.event;
+package zwb.cn.mvp.view.event;
 
 /**
  * Created by zhangwb on 2015/7/31.

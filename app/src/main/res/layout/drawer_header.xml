@@ -3,36 +3,21 @@
     android:padding="10dp"
      android:orientation="vertical"
      android:layout_width="match_parent"
-    android:layout_height="120dp">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:gravity="center_vertical"
-        >
+    android:gravity="center"
+    android:background="@color/ligth_blue"
+    android:layout_height="wrap_content">
     <zwb.cn.view.imageview.CircleImageView
         android:layout_alignParentLeft="true"
         android:id="@+id/cv_user_pic"
-        android:layout_width="80dp"
-        android:layout_height="80dp" />
-        <ImageView
-            android:id="@+id/iv_qcode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="centerInside"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/qcode"/>
-
-     <TextView
-         android:id="@+id/tv_user_name"
-         android:layout_toRightOf="@id/cv_user_pic"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:textSize="@dimen/mid_text_size"
-         android:layout_centerVertical="true"
-         android:text="1231"
-         android:layout_toLeftOf="@id/iv_qcode"
-         />
-    </RelativeLayout>
+        android:layout_width="100dp"
+        android:src="@drawable/logo_icon_sml"
+        android:layout_height="100dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/big_text_size"
+        android:layout_marginTop="10dp"
+        android:text="用户名"
+        android:textColor="@color/white"
+        android:id="@+id/tv_user_name"/>
 </LinearLayout>

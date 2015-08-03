@@ -8,7 +8,7 @@ import android.os.Handler;
  */
  public interface ILoginMode {
 
-   void loginAction(String name,String pwd,Handler handler);
+    void loginAction(String name,String pwd,Handler handler);
     void goToNewUserPage(Context context);
     void goToNMainPage(Context context);
 
