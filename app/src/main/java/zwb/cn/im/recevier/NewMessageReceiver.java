@@ -3,6 +3,7 @@ package zwb.cn.im.recevier;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMConversation;
@@ -19,6 +20,7 @@ public class NewMessageReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        Log.d("onReceive","接收到新消息");
         abortBroadcast();
         // 消息id（每条消息都会生成唯一的一个id，目前是SDK生成）
         String msgId = intent.getStringExtra("msgid");

@@ -1,79 +1,78 @@
-
-<android.support.v4.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:fitsSystemWindows="true">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-   >
-   <include
-       android:id="@+id/ll_main"
-       layout="@layout/title_head"
-       ></include>
 
-    <LinearLayout
-        android:id="@+id/ll_bottom"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical">
-        <View
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/ll_main"
+            layout="@layout/title_head"></include>
+
+        <LinearLayout
+            android:id="@+id/ll_bottom"
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/light_gray"
-            ></View>
-    <RadioGroup
-        android:id="@+id/rg_group"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
 
-        <RadioButton
-            style="@style/radion_button_style"
-            android:text="@string/home"
-            android:drawableTop="@drawable/radion_button_home" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/light_gray"></View>
 
-        <RadioButton
-            style="@style/radion_button_style"
-            android:text="@string/message"
-            android:drawableTop="@drawable/radion_button_mes" />
+            <RadioGroup
+                android:id="@+id/rg_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <RadioButton
-            android:text="@string/friends"
-            style="@style/radion_button_style"
-            android:drawableTop="@drawable/radion_button_friedns" />
+                <RadioButton
+                    style="@style/radion_button_style"
+                    android:drawableTop="@drawable/radion_button_home"
+                    android:text="@string/home" />
 
-        <RadioButton
-            android:text="@string/dynamic"
-            style="@style/radion_button_style"
-            android:drawableTop="@drawable/radion_button_dynamic"
-            />
-        <RadioButton
-            android:text="@string/more"
-            style="@style/radion_button_style"
-            android:drawableTop="@drawable/radion_button_more"
-            />
-    </RadioGroup>
-    </LinearLayout>
-    <FrameLayout
-        android:id="@+id/fl_content"
+                <RadioButton
+                    style="@style/radion_button_style"
+                    android:drawableTop="@drawable/radion_button_mes"
+                    android:text="@string/message" />
+
+                <RadioButton
+                    style="@style/radion_button_style"
+                    android:drawableTop="@drawable/radion_button_friedns"
+                    android:text="@string/friends" />
+
+                <RadioButton
+                    style="@style/radion_button_style"
+                    android:drawableTop="@drawable/radion_button_dynamic"
+                    android:text="@string/dynamic" />
+
+                <RadioButton
+                    style="@style/radion_button_style"
+                    android:drawableTop="@drawable/radion_button_more"
+                    android:text="@string/more" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/ll_main"
+            android:layout_above="@id/ll_bottom"
+           ></FrameLayout>
+    </RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignBottom="@id/ll_main"
-        android:layout_alignTop="@id/ll_bottom"
-        ></FrameLayout>
-</RelativeLayout>
-
-   <android.support.design.widget.NavigationView
-    android:id="@+id/navigation"
-    android:layout_gravity="start"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:headerLayout="@layout/drawer_header"
-    app:menu="@menu/drawer_menu"/>
+        android:layout_gravity="start"
+        app:headerLayout="@layout/drawer_header"
+        app:menu="@menu/drawer_menu" />
 
 </android.support.v4.widget.DrawerLayout>
