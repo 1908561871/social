@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentActivity;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
@@ -31,7 +32,7 @@ import zwb.cn.util.ToastUtils;
  * @author Tony Shen
  *
  */
-public class BaseActivity extends Activity{
+public class BaseActivity extends FragmentActivity{
 
 	public static CrashApplication app;
 	public int networkType;

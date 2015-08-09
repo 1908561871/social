@@ -13,57 +13,23 @@
             android:id="@+id/ll_main"
             layout="@layout/title_head"></include>
 
-        <LinearLayout
-            android:id="@+id/ll_bottom"
+        <android.support.v4.app.FragmentTabHost
+            android:id="@+id/fth_tabhost"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:orientation="vertical">
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/light_gray"></View>
-
-            <RadioGroup
-                android:id="@+id/rg_group"
+            android:layout_alignParentBottom="true">
+            <FrameLayout
+                android:id="@+id/fl_tab"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    style="@style/radion_button_style"
-                    android:drawableTop="@drawable/radion_button_home"
-                    android:text="@string/home" />
-
-                <RadioButton
-                    style="@style/radion_button_style"
-                    android:drawableTop="@drawable/radion_button_mes"
-                    android:text="@string/message" />
-
-                <RadioButton
-                    style="@style/radion_button_style"
-                    android:drawableTop="@drawable/radion_button_friedns"
-                    android:text="@string/friends" />
-
-                <RadioButton
-                    style="@style/radion_button_style"
-                    android:drawableTop="@drawable/radion_button_dynamic"
-                    android:text="@string/dynamic" />
-
-                <RadioButton
-                    style="@style/radion_button_style"
-                    android:drawableTop="@drawable/radion_button_more"
-                    android:text="@string/more" />
-            </RadioGroup>
-        </LinearLayout>
-
+                ></FrameLayout>
+        </android.support.v4.app.FragmentTabHost >
         <FrameLayout
             android:id="@+id/fl_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/ll_main"
-            android:layout_above="@id/ll_bottom"
+            android:layout_above="@id/fth_tabhost"
            ></FrameLayout>
     </RelativeLayout>
 
@@ -74,5 +40,4 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/drawer_header"
         app:menu="@menu/drawer_menu" />
-
 </android.support.v4.widget.DrawerLayout>
