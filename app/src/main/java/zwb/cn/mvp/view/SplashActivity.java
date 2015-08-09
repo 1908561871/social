@@ -5,20 +5,15 @@ import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.Button;
 
 import com.easemob.EMConnectionListener;
 import com.easemob.EMError;
 import com.easemob.chat.EMChatManager;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 import zwb.cn.app.BaseActivity;
-import zwb.cn.mvp.view.receiver.NetChangeReceiver;
+import zwb.cn.receiver.NetChangeReceiver;
 import zwb.cn.social.R;
 import zwb.cn.util.SAFUtils;
-import zwb.cn.view.eidttext.MaterialEditText;
 
 
 public class SplashActivity extends BaseActivity {

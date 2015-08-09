@@ -1,10 +1,10 @@
-package zwb.cn.mvp.view.presenter;
+package zwb.cn.mvp.presenter;
 
 import android.content.Context;
 
-import zwb.cn.mvp.view.imodel.IMainModel;
+import zwb.cn.mvp.model.imodel.IMainModel;
 import zwb.cn.mvp.view.iview.IMainView;
-import zwb.cn.mvp.view.model.MainModel;
+import zwb.cn.mvp.model.MainModel;
 
 /**
  * Created by zhangweibo on 2015/8/4.

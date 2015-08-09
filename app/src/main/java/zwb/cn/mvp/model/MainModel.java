@@ -1,12 +1,12 @@
-package zwb.cn.mvp.view.model;
+package zwb.cn.mvp.model;
 
 import android.content.Context;
 import android.content.IntentFilter;
 
 import com.easemob.chat.EMChatManager;
 
-import zwb.cn.im.recevier.NewMessageReceiver;
-import zwb.cn.mvp.view.imodel.IMainModel;
+import zwb.cn.im.receiver.NewMessageReceiver;
+import zwb.cn.mvp.model.imodel.IMainModel;
 
 /**
  * Created by zhangweibo on 2015/8/3.

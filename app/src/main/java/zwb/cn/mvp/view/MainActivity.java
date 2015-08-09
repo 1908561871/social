@@ -3,14 +3,10 @@ package zwb.cn.mvp.view;
 import android.content.res.ColorStateList;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTabHost;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.RadioGroup;
 import android.widget.TabHost;
 import android.widget.TextView;
 
@@ -19,9 +15,9 @@ import com.easemob.chat.EMChat;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import zwb.cn.app.BaseActivity;
-import zwb.cn.mvp.view.bean.MainTab;
+import zwb.cn.entity.bean.MainTab;
 import zwb.cn.mvp.view.iview.IMainView;
-import zwb.cn.mvp.view.presenter.MainPresenter;
+import zwb.cn.mvp.presenter.MainPresenter;
 import zwb.cn.social.R;
 
 public class MainActivity extends BaseActivity implements IMainView, TabHost.OnTabChangeListener {
@@ -30,9 +26,9 @@ public class MainActivity extends BaseActivity implements IMainView, TabHost.OnT
     //内容显示区
     @Bind(R.id.fl_content)
     FrameLayout fl_content;
-    //底部显示
+  /*  //底部显示
     @Bind(R.id.fl_tab)
-    FrameLayout fl_tab;
+    FrameLayout fl_tab;*/
     @Bind(R.id.fth_tabhost)
     FragmentTabHost tabHost;
     private MainPresenter mainPresenter;

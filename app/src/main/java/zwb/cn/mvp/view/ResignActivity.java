@@ -11,7 +11,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import zwb.cn.app.BaseActivity;
 import zwb.cn.mvp.view.iview.IResignView;
-import zwb.cn.mvp.view.presenter.ResignPresenter;
+import zwb.cn.mvp.presenter.ResignPresenter;
 import zwb.cn.social.R;
 
 /**

@@ -1,17 +1,13 @@
-package zwb.cn.mvp.view.model;
+package zwb.cn.mvp.model;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Handler;
 
-import com.easemob.chat.EMChatManager;
-
 import zwb.cn.im.IMCoreHelper;
-import zwb.cn.im.recevier.NewMessageReceiver;
 import zwb.cn.mvp.view.MainActivity;
 import zwb.cn.mvp.view.ResignActivity;
-import zwb.cn.mvp.view.imodel.ILoginMode;
+import zwb.cn.mvp.model.imodel.ILoginMode;
 
 public class LoginModel implements ILoginMode {
 

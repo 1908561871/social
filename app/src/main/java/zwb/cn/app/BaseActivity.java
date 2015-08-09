@@ -22,7 +22,7 @@ import java.lang.ref.WeakReference;
 import de.greenrobot.event.EventBus;
 import de.greenrobot.event.Subscribe;
 import dmax.dialog.SpotsDialog;
-import zwb.cn.mvp.view.event.NetChangeEvent;
+import zwb.cn.event.NetChangeEvent;
 import zwb.cn.exception.CrashApplication;
 import zwb.cn.social.R;
 import zwb.cn.util.SAFUtils;

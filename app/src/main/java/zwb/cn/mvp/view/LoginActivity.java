@@ -1,8 +1,6 @@
 package zwb.cn.mvp.view;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +11,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import zwb.cn.app.BaseActivity;
 import zwb.cn.mvp.view.iview.ILoginView;
-import zwb.cn.mvp.view.presenter.LoginPresenter;
+import zwb.cn.mvp.presenter.LoginPresenter;
 import zwb.cn.social.R;
 
 /**

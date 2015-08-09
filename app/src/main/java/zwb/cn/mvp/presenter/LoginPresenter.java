@@ -1,15 +1,14 @@
-package zwb.cn.mvp.view.presenter;
+package zwb.cn.mvp.presenter;
 
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
-import android.widget.Switch;
 
 import zwb.cn.config.NetCode;
 import zwb.cn.mvp.view.LoginActivity;
-import zwb.cn.mvp.view.imodel.ILoginMode;
+import zwb.cn.mvp.model.imodel.ILoginMode;
 import zwb.cn.mvp.view.iview.ILoginView;
-import zwb.cn.mvp.view.model.LoginModel;
+import zwb.cn.mvp.model.LoginModel;
 import zwb.cn.util.StringUtils;
 
 /**

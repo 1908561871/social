@@ -1,4 +1,4 @@
-package zwb.cn.mvp.view.imodel;
+package zwb.cn.mvp.model.imodel;
 
 import android.content.Context;
 import android.os.Handler;

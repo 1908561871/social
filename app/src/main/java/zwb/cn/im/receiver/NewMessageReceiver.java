@@ -1,4 +1,4 @@
-package zwb.cn.im.recevier;
+package zwb.cn.im.receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

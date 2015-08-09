@@ -1,9 +1,9 @@
-package zwb.cn.mvp.view.model;
+package zwb.cn.mvp.model;
 
 import android.os.Handler;
 
 import zwb.cn.im.IMCoreHelper;
-import zwb.cn.mvp.view.imodel.IResignModel;
+import zwb.cn.mvp.model.imodel.IResignModel;
 
 /**
  * Created by Administrator on 2015/8/1.

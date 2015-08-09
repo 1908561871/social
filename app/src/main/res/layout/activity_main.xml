@@ -5,33 +5,43 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <include
             android:id="@+id/ll_main"
             layout="@layout/title_head"></include>
 
+        <FrameLayout
+            android:id="@+id/fl_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            ></FrameLayout>
+        <LinearLayout
+            android:id="@+id/ll_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/light_gray"
+                ></View>
         <android.support.v4.app.FragmentTabHost
             android:id="@+id/fth_tabhost"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true">
+            >
             <FrameLayout
-                android:id="@+id/fl_tab"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                ></FrameLayout>
+                android:layout_height="wrap_content"></FrameLayout>
         </android.support.v4.app.FragmentTabHost >
-        <FrameLayout
-            android:id="@+id/fl_content"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/ll_main"
-            android:layout_above="@id/fth_tabhost"
-           ></FrameLayout>
-    </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/navigation"

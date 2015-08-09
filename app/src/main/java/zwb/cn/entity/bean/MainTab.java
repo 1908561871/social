@@ -1,4 +1,4 @@
-package zwb.cn.mvp.view.bean;
+package zwb.cn.entity.bean;
 
 import zwb.cn.mvp.view.fragment.DynamicFragment;
 import zwb.cn.mvp.view.fragment.FriendsFragment;

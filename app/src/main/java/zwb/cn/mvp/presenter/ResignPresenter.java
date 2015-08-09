@@ -1,10 +1,9 @@
-package zwb.cn.mvp.view.presenter;
+package zwb.cn.mvp.presenter;
 
 import android.os.Handler;
 
-import zwb.cn.im.IMCoreHelper;
 import zwb.cn.mvp.view.iview.IResignView;
-import zwb.cn.mvp.view.model.ResignModel;
+import zwb.cn.mvp.model.ResignModel;
 import zwb.cn.util.StringUtils;
 
 /**
