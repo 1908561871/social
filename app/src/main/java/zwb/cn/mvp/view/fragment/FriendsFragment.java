@@ -43,8 +43,7 @@ public class FriendsFragment extends BaseFragment implements BGARefreshLayout.BG
 
     @Override
     protected void processLogic(Bundle savedInstanceState) {
-        mRefreshLayout.setRefreshViewHolder(new BGANormalRefreshViewHolder(mApp, true));
-
+        mRefreshLayout.setRefreshViewHolder(new BGANormalRefreshViewHolder(mApp, false));
   /*      BGAMoocStyleRefreshViewHolder moocStyleRefreshViewHolder = new BGAMoocStyleRefreshViewHolder(mApp, true);
         moocStyleRefreshViewHolder.setUltimateColor(getResources().getColor(R.color.gray));
         moocStyleRefreshViewHolder.setOriginalBitmap(BitmapFactory.decodeResource(getResources(), R.mipmap.logo_icon));

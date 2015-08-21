@@ -5,8 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-    <ListView
-        android:id="@+id/lv_listview_data"
-        style="@style/MatchAuto"
-        android:scrollbars="none" />
+<RelativeLayout
+    android:id="@+id/rl_myfiends"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_centerVertical="true"
+        android:textSize="@dimen/common_text_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/my_friends"/>
+
+
+    <TextView
+        android:text="0/0"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/more_sml"/>
+
+
+</RelativeLayout>
 </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
