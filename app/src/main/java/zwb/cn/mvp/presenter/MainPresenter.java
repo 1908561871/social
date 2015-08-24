@@ -20,9 +20,9 @@ public class MainPresenter {
     }
 
 
-    public void resignNewMessReceiver(Context context){
+    public void IMinit(Context context){
 
-        iMainModel.resignNewMessReceiver(context);
+        iMainModel.IMinit(context);
     }
 
 

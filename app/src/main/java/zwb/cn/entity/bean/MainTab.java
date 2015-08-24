@@ -12,15 +12,15 @@ import zwb.cn.social.R;
  */
 public enum  MainTab {
     //首页;
-    HOME(R.drawable.radion_button_home,R.string.home,0,0, HomeFragment.class,R.drawable.radion_button_home),
+    HOME(R.drawable.button_home,R.string.home,0,0, HomeFragment.class,R.drawable.button_home),
     //消息
-    MESSAGE(R.drawable.radion_button_mes,R.string.message,1,1, MessageFragment.class,R.drawable.radion_button_mes),
+    MESSAGE(R.drawable.button_mes,R.string.message,1,1, MessageFragment.class,R.drawable.button_mes),
     //好友
-    FRIENDS(R.drawable.radion_button_friedns,R.string.friends,2,2, FriendsFragment.class,R.drawable.radion_button_friedns),
+    FRIENDS(R.drawable.button_friedns,R.string.friends,2,2, FriendsFragment.class,R.drawable.button_friedns),
     //动态
-    DYNAMIC(R.drawable.radion_button_dynamic,R.string.dynamic,3,3, DynamicFragment.class,R.drawable.radion_button_dynamic),
+    DYNAMIC(R.drawable.button_dynamic,R.string.dynamic,3,3, DynamicFragment.class,R.drawable.button_dynamic),
     //更多
-    MORE(R.drawable.radion_button_more,R.string.more,4,4, MoreFragment.class,R.drawable.radion_button_more);
+    MORE(R.drawable.button_more,R.string.more,4,4, MoreFragment.class,R.drawable.button_more);
 
     //图标
     private int icon;

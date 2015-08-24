@@ -14,7 +14,29 @@
     <string name="dynamic">动态</string>
     <string name="more">更多</string>
 
-
+  <!--  我的好友界面 -->
     <string name="my_friends">我的好友</string>
+    <string name="add_friends">添加好友</string>
+
+    <!--  添加好友界面 -->
+    <string name="input_account">请输入好友账号</string>
+    <string name="search">搜索</string>
+    <!--  我的好友管理 -->
+    <string name="remark">备注</string>
+
+
+    <!--  加载框-->
+    <string name="empty_string">empty</string>
+    <string name="dynamicbox_retry">Retry</string>
+
+    <string name="dynamicbox_loading_title"></string>
+    <string name="dynamicbox_loading_message"></string>
+
+    <string name="dynamicbox_internet_off_title">Error</string>
+    <string name="dynamicbox_internet_off_message">Internet is off, please enable it</string>
+
+    <string name="dynamicbox_exception_title">Error</string>
+    <string name="dynamicbox_exception_message">An error has occurred, retry again</string>
+
 
 </resources>

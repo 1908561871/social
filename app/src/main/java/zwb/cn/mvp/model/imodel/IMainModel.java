@@ -7,6 +7,6 @@ import android.content.Context;
  */
 public interface IMainModel {
 
-    void resignNewMessReceiver(Context context);
+    void IMinit(Context context);
 
 }

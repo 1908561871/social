@@ -2,6 +2,7 @@ package zwb.cn.exception;
 
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 import android.content.pm.PackageInfo;
@@ -9,7 +10,8 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.telephony.TelephonyManager;
 
-import com.easemob.chat.EMChat;
+import com.avos.avoscloud.AVOSCloud;
+import com.avos.avoscloud.AVObject;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
 import java.util.ArrayList;
@@ -17,6 +19,8 @@ import java.util.HashMap;
 import java.util.List;
 
 import zwb.cn.config.Constant;
+import zwb.cn.entity.bean.UserInfo;
+import zwb.cn.util.Logger;
 import zwb.cn.util.StringUtils;
 
 /**
@@ -26,6 +30,7 @@ import zwb.cn.util.StringUtils;
  * 
  */
 public class CrashApplication extends Application {
+	private static  String TAG="CrashApplication";
 	public List<Activity> activityManager;
 	public HashMap<String, Object> session;
 	private static CrashApplication instance;
@@ -57,10 +62,10 @@ public class CrashApplication extends Application {
 		crashHandler.init(getApplicationContext());
         //fresco初始化
 		Fresco.initialize(getApplicationContext());
-        //初始化IM
-        EMChat.getInstance().init(this);
-        EMChat.getInstance().setDebugMode(true);//在做打包混淆时，要关闭debug模式，如果未被关闭，则会出现程序无法运行问题
-        instance = this;
+		resignEntity();
+		//初始化数据存储
+		AVOSCloud.initialize(this, Constant.IM_APPID, Constant.IM_KEY);
+		instance = this;
 		session = new HashMap<String, Object>();
 		activityManager = new ArrayList<Activity>();
 		PackageManager manager = this.getPackageManager();
@@ -78,6 +83,17 @@ public class CrashApplication extends Application {
 		}
 
 	}
+
+	/**
+	 * 初始化实体
+	 */
+	public  void  resignEntity(){
+		AVObject.registerSubclass(UserInfo.class);
+
+
+	}
+
+
 
     public void test(){
     }
@@ -100,7 +116,6 @@ public class CrashApplication extends Application {
 		}
 		return imei;
 	}
-
 
 
 

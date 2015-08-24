@@ -48,7 +48,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0.6dp"
-            android:background="@color/gray"
+            android:background="@color/divider"
             />
         <RelativeLayout
             android:layout_width="match_parent"
@@ -90,7 +90,7 @@
             android:layout_margin="10dp"
             android:textSize="@dimen/common_text_size"
             android:layout_alignParentRight="true"
-            android:textColor="@color/ligth_blue"
+            android:textColor="@color/primary"
             />
     </RelativeLayout>
 </LinearLayout>

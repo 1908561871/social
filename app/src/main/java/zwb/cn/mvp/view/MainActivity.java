@@ -26,9 +26,6 @@ public class MainActivity extends BaseActivity implements IMainView, TabHost.OnT
     //内容显示区
     @Bind(R.id.fl_content)
     FrameLayout fl_content;
-  /*  //底部显示
-    @Bind(R.id.fl_tab)
-    FrameLayout fl_tab;*/
     @Bind(R.id.fth_tabhost)
     FragmentTabHost tabHost;
     private MainPresenter mainPresenter;
@@ -39,10 +36,12 @@ public class MainActivity extends BaseActivity implements IMainView, TabHost.OnT
         ButterKnife.bind(this);
         initTab();
         mainPresenter=new MainPresenter(this);
-        mainPresenter.resignNewMessReceiver(this);
-        EMChat.getInstance().setAppInited();
-        navigation.setItemTextColor(ColorStateList.valueOf(R.color.gray));
+        mainPresenter.IMinit(this);
+        navigation.setItemTextColor(ColorStateList.valueOf(getResources().getColor(R.color.secondary_text)));
     }
+
+
+
 
     public void initTab(){
         tabHost.setup(this, getSupportFragmentManager(), R.id.fl_content);
@@ -67,8 +66,7 @@ public class MainActivity extends BaseActivity implements IMainView, TabHost.OnT
          TextView tv_title= (TextView) view.findViewById(R.id.tv_title);
          ImageView  iv_icon= (ImageView) view.findViewById(R.id.iv_icon);
          tv_title.setText(getString(tab.getTitle()));
-       //  iv_icon.setImageResource(tab.getIcon());
-        iv_icon.setImageDrawable(getResources().getDrawable(tab.getDrawable()));
+         iv_icon.setImageDrawable(getResources().getDrawable(tab.getDrawable()));
          return view;
     }
 

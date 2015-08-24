@@ -2,9 +2,12 @@
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/app/src/main/java/zwb/cn/app/BaseActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/zwb/cn/view/loadinglayout/DynamicBox.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/custom_bottom_progressbar.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/exception_failure.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/exception_loading_content.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/exception_no_internet.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/recycler_view_adapter.xml" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
-

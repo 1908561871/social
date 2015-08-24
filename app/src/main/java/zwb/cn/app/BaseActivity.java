@@ -15,6 +15,7 @@ import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.lang.ref.WeakReference;
@@ -27,6 +28,8 @@ import zwb.cn.exception.CrashApplication;
 import zwb.cn.social.R;
 import zwb.cn.util.SAFUtils;
 import zwb.cn.util.ToastUtils;
+import zwb.cn.view.loadinglayout.DynamicBox;
+import zwb.cn.view.loadtoast.LoadToast;
 
 /**
  * @author Tony Shen
@@ -41,6 +44,8 @@ public class BaseActivity extends FragmentActivity{
 	private boolean isShowNet;
     protected Handler mHandler = new SafeHandler(this);
 	private SpotsDialog spotsDialog;
+	private DynamicBox box;
+	private LoadToast loadToast;
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		app = (CrashApplication) this.getApplication();
@@ -68,10 +73,7 @@ public class BaseActivity extends FragmentActivity{
         }
 	}
 	
-	/**
-	 * 杩斿洖褰撳墠杩愯activity鐨勫悕绉?
-	 * @return
-	 */
+
 	protected String getCurrentActivityName() {
 		int size = app.activityManager.size();
 		if (size > 0) {
@@ -102,11 +104,6 @@ public class BaseActivity extends FragmentActivity{
 		ToastUtils.show(this, resId);
 	}
 	
-	/**
-	 * 闃叉鍐呴儴Handler绫诲紩璧峰唴瀛樻硠闇?
-	 * @author Tony Shen
-	 *
-	 */
     public static class SafeHandler extends Handler{
 	    private final WeakReference<Activity> mActivity;
 	    public SafeHandler(Activity activity) {
@@ -153,16 +150,21 @@ public class BaseActivity extends FragmentActivity{
 	@Subscribe
   public void netChange(NetChangeEvent event){
 		isNetAvailabe=event.isNetAvailable();
+		RelativeLayout rl_set_net= (RelativeLayout) findViewById(R.id.rl_set_net);
+		if (rl_set_net==null)
+		{
+			return;
+		}
       if (isShowNet && !isNetAvailabe){
-		  findViewById(R.id.rl_set_net).setVisibility(View.VISIBLE);
-          findViewById(R.id.rl_set_net).setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick(View v) {
+		  rl_set_net.setVisibility(View.VISIBLE);
+		  rl_set_net.setOnClickListener(new View.OnClickListener() {
+			  @Override
+			  public void onClick(View v) {
 				  //todo
-              }
-          });
+			  }
+		  });
       }else{
-		  findViewById(R.id.rl_set_net).setVisibility(View.GONE);
+		  rl_set_net.setVisibility(View.GONE);
 	  }
   }
 
@@ -199,6 +201,47 @@ public class BaseActivity extends FragmentActivity{
 
 	}
 
+	/**
+	 * 加载viewe
+	 * @param view
+	 */
+
+	public void showLoadingView(View view){
+		box=new DynamicBox(this,view);
+		box.showLoadingLayout();
+	}
+
+
+	public void showLoadingView(int res){
+		box=new DynamicBox(this,res);
+		box.showLoadingLayout();
+	}
+
+
+
+	public void showLoadToast(){
+
+		if (loadToast==null){
+			loadToast=new LoadToast(this);
+		}
+		loadToast.setText("正在获取数据...");
+		loadToast.show();
+	}
+
+    public void showLoadToastSuccess(){
+		if (loadToast!=null)
+		{
+			loadToast.success();
+		}
+
+	}
+
+	public void showLoadToastError(){
+		if (loadToast!=null)
+		{
+		loadToast.error();
+		}
+	}
 
 
 }

@@ -1,23 +1,16 @@
 package zwb.cn.mvp.view.fragment;
 
-import android.graphics.BitmapFactory;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewParent;
-import android.widget.ListView;
+import android.widget.RelativeLayout;
 
 import butterknife.Bind;
-import cn.bingoogolapple.refreshlayout.BGAMoocStyleRefreshViewHolder;
-import cn.bingoogolapple.refreshlayout.BGANormalRefreshViewHolder;
+import butterknife.OnClick;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
-import cn.bingoogolapple.refreshlayout.BGARefreshViewHolder;
-import cn.bingoogolapple.refreshlayout.BGAStickinessRefreshViewHolder;
-import zwb.cn.adapter.FriendsGroupAdapter;
 import zwb.cn.app.BaseFragment;
+import zwb.cn.mvp.presenter.MyFriendsPresenter;
+import zwb.cn.mvp.view.MyFriendsListActivity;
 import zwb.cn.social.R;
 
 /**
@@ -25,15 +18,12 @@ import zwb.cn.social.R;
  */
 public class FriendsFragment extends BaseFragment implements BGARefreshLayout.BGARefreshLayoutDelegate {
 
-    @Bind(R.id.rl_listview_refresh)
-    BGARefreshLayout mRefreshLayout;
-    @Bind(R.id.lv_listview_data)
-    ListView lv_listview_data;
-    private FriendsGroupAdapter adapter;
+    private MyFriendsPresenter presenter;
     @Override
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.fragment_friends);
         initRefreshLayout();
+        presenter=new MyFriendsPresenter(this);
     }
 
     @Override
@@ -43,17 +33,16 @@ public class FriendsFragment extends BaseFragment implements BGARefreshLayout.BG
 
     @Override
     protected void processLogic(Bundle savedInstanceState) {
-        mRefreshLayout.setRefreshViewHolder(new BGANormalRefreshViewHolder(mApp, false));
-  /*      BGAMoocStyleRefreshViewHolder moocStyleRefreshViewHolder = new BGAMoocStyleRefreshViewHolder(mApp, true);
+  /*      mRefreshLayout.setRefreshViewHolder(new BGANormalRefreshViewHolder(mApp, false));
+  *//*      BGAMoocStyleRefreshViewHolder moocStyleRefreshViewHolder = new BGAMoocStyleRefreshViewHolder(mApp, true);
         moocStyleRefreshViewHolder.setUltimateColor(getResources().getColor(R.color.gray));
         moocStyleRefreshViewHolder.setOriginalBitmap(BitmapFactory.decodeResource(getResources(), R.mipmap.logo_icon));
 //        moocStyleRefreshViewHolder.setLoadMoreBackgroundColorRes(R.color.custom_imoocstyle);
         moocStyleRefreshViewHolder.setSpringDistanceScale(0.2f);
 //        moocStyleRefreshViewHolder.setRefreshViewBackgroundColorRes(R.color.custom_imoocstyle);
-        mRefreshLayout.setRefreshViewHolder(moocStyleRefreshViewHolder);*/
+        mRefreshLayout.setRefreshViewHolder(moocStyleRefreshViewHolder);*//*
         //mRefreshLayout.setCustomHeaderView(DataEngine.getCustomHeaderView(mApp), true);
-        adapter=new FriendsGroupAdapter(getActivity());
-        lv_listview_data.setAdapter(adapter);
+        lv_listview_data.setAdapter(adapter);*/
     }
 
     @Override
@@ -64,7 +53,7 @@ public class FriendsFragment extends BaseFragment implements BGARefreshLayout.BG
 
     private void initRefreshLayout() {
         // 为BGARefreshLayout设置代理
-        mRefreshLayout.setDelegate(this);
+     //   mRefreshLayout.setDelegate(this);
 
     }
 
@@ -77,4 +66,21 @@ public class FriendsFragment extends BaseFragment implements BGARefreshLayout.BG
     public boolean onBGARefreshLayoutBeginLoadingMore(BGARefreshLayout bgaRefreshLayout) {
         return false;
     }
+
+    @OnClick({R.id.rl_myfiends,R.id.rl_add_friends})
+    public void click(View v){
+        switch (v.getId())
+        {
+            case R.id.rl_myfiends:
+                presenter.goToMyFriendsListPager();
+                break;
+            case R.id.rl_add_friends:
+                presenter.goToAddFriendsPager();
+                break;
+        }
+
+    }
+
+
+
 }

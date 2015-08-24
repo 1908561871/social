@@ -19,8 +19,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="首页"
+        android:textColor="@drawable/home_button_press"
         android:textSize="12sp"
-        android:textColor="@color/blue">
+       >
     </TextView>
 
 </LinearLayout>
